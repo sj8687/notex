@@ -32,14 +32,14 @@ export function NoteDiv({ title, description, buttonText, noteNo, updateFn }: pr
         titleVal && descriptionVal && updateFn ? updateFn(titleVal, descriptionVal,noteNo) : null
     }
     return (
-        <>
+        <div className="border md:border-none md:h-auto h-[770px]">
 
-            <div className="mt-[100px] md:mt-0 w-[80%] mx-auto flex flex-col  justify-center items-center">
-                <label className=" font-semibold">Title:</label>
-                <input ref={titleRef} value={titleVal} onChange={handelTitle} className="rounded p-1 w-[80%] outline-dashed bg-slate-200" type="text" required />
+            <div className="mt-[100px] md:mt-0 w-[80%] mx-auto    flex flex-col  justify-center items-center">
+                <label className=" font-semibold text-white">Title:</label>
+                <input ref={titleRef} value={titleVal} onChange={handelTitle} className="rounded shadow-[0_0_10px_rgba(100,100,700,30)] p-1 w-[80%] outline-dashed bg-slate-200" type="text" required />
             </div>
-            <div className=" w-[100%] mt-[20px] bg-black p-3 h-[auto] rounded-xl relative overflow-y-hidden">
-                <div className=" bg-white border rounded-xl w-[100%] pt-3 px-1">
+            <div className=" w-[100%] mt-[20px] bg-black p-3 h-[auto] rounded-xl  overflow-y-hidden">
+                <div className=" bg-white border rounded-xl w-[100%] pt-3 px-1 ">
                     <textarea
                         value={descriptionVal}
                         onChange={handelDescription}
@@ -54,14 +54,15 @@ export function NoteDiv({ title, description, buttonText, noteNo, updateFn }: pr
                             outline: 'none',
                             paddingInline: '3px',
                             overflow: 'auto',
+                            
                         }}
                     />
                 </div>
-                <div className="absolute left-1/2 top-0 transform -translate-x-1/2 bg-black text-white text-center w-[90px] rounded-b-lg cursor-pointer">
+                <div className=" border mt-4 bg-green-400 grid grid-cols-1 ml-[130px] md:ml-[570px] text-black t w-[90px] rounded cursor-pointer p-2">
                     <button onClick={handelSubmit}>{buttonText}</button>
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }

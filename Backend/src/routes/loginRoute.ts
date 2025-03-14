@@ -41,7 +41,7 @@ loginRoute.post("/signup",async (req,res)=>{
          })
  
          res.status(200).json({
-             message:"user is created"
+             message:"SignUp success"
          })
         }
         else{
@@ -55,7 +55,7 @@ loginRoute.post("/signup",async (req,res)=>{
   
    } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error signUp fail" });
    }
 });
 
@@ -84,7 +84,7 @@ loginRoute.post("/signin",async(req:Request,res:Response)=>{
                         maxAge:30 * 24 * 60 * 60 * 1000,
                         httpOnly:true,
                         secure:false,
-                        sameSite:"none"
+                        sameSite:"lax"
                     }).json({
                         login:"success",
                     })

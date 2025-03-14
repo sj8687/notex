@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export function Navbar(){
     const {authorized} =useMyContext();
-
+    console.log(authorized +"nav auth")
     const t1= gsap.timeline()
     function handelClick(){
         t1.play()
@@ -54,11 +54,11 @@ export function Navbar(){
        }) 
     // gsap end
     return (
-    <div className="z-50 bg-transparent rounded-lg backdrop-blur-[10px] max-w-[1152px] mx-auto flex justify-between items-center gap-6 fixed top-0 left-0 right-0">
+    <div className=" z-50 bg-transparent rounded-lg backdrop-blur-[10px] max-w-[1152px] mx-auto flex justify-between items-center gap-6 fixed top-0 left-0 right-0 p-3">
                 <div className=" px-3 logo">
-                    <h1 className="text-xl font-bold">Note<span className="text-purple-700 font-bold">Vault</span></h1>
+                    <h1 className="text-xl  text-white">Note<span className="text-green-400 font-bold text-[24px]">X</span></h1>
                 </div>
-                <div className="text-start  px-2 hidden sm:flex sm:gap-8">
+                <div className="text-start  px-2 hidden sm:flex sm:gap-12 text-gray-100 text-[18px]">
                     <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/"}>Home</Link>
                     <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/services"}>Services</Link>
                     <Link className="hover:shadow-lg hover:rounded-lg menus" href={"manual"}>Manual</Link>
@@ -66,21 +66,21 @@ export function Navbar(){
                     
                 </div>
                 
-                <div className=" signbarsdiv flex p-1 gap-2 pr-2 ">
+                <div className=" signbarsdiv flex p-1 gap-2 pr-2 text-[18px]">
                     {
-                        authorized ? (<Link href={"/login/logout"}><CustomeButton text={"Logout"} textColor=" text-white sign"/></Link>) 
+                        authorized ? (<Link href={"/login/logout"}><CustomeButton text={"Logout"} textColor=" text-red-600 sign"/></Link>) 
                         :
-                         (<Link href={"/login/signup"}><CustomeButton text={"SignUp"} textColor=" text-white sign"/></Link>)  
+                         (<Link href={"/login/signup"}><CustomeButton text={"SignUp"} textColor=" text-black sign"/></Link>)  
                     }
                     
 
-                    <div onClick={handelClick} className="w-[50px] text-2xl sm:hidden flex items-center justify-center sign">
+                    <div onClick={handelClick} className="w-[50px] text-[30px] text-white sm:hidden flex items-center justify-center sign">
                             <HiBars3 />
                     </div>
                 </div>
 
-                         <div id="mobile-menu" className=" absolute top-12 right-[-90%] bg-black text-white flex flex-col p-3 w-[250px] justify-center items-center gap-4 rounded-lg ">
-                                <p onClick={()=>hidediv()} className="absolute top-0 right-0 px-2 rounded mr-5 mt-1 font-medium text-black bg-green-300 cursor-pointer">X</p>
+                         <div id="mobile-menu" className=" absolute top-12 right-[-90%] bg-white text-black flex flex-col p-3 w-[220px] justify-center items-center gap-4 rounded-lg ">
+                                <p onClick={()=>hidediv()} className="absolute top-0 right-0 px-2 rounded mr-5 mt-2 font-medium text-black bg-green-300 cursor-pointer">X</p>
                                 <Link id="mobile-menu-text" className="mt-3 rounded-lg outline-none tracking-widest transition-shadow duration-100 hover:shadow-white px-10 " href={"/"}>Home</Link>
                                 <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/services"}>Services</Link>
                                 <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/manuals"}>Manual</Link>

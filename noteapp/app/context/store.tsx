@@ -20,7 +20,7 @@ try {
             }
         )
         if(validUser.data){
-            // console.log("user is"+validUser.data)
+            console.log("user is"+validUser.data)
             setAuthorized(true)
         }else{
             setAuthorized(false);

@@ -3,7 +3,7 @@ export function MainDashSkeleton() {
     return (
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[...Array(6)].map((_, index) => (
-                <div key={index} className="border shadow-lg py-4 px-3 animate-pulse bg-gray-100 rounded-lg">
+                <div key={index} className="border shadow-lg py-4 px-3  bg-gray-700 animate-pulse  rounded-lg">
                     
                     <div className="w-[80px] mt-1 bg-gray-300 h-6 rounded-lg border"></div>
                     <div className="w-[90%] h-6 bg-gray-300 rounded-md mt-2 ml-[38px]"></div>

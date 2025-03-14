@@ -1,47 +1,57 @@
-import Link from "next/link";
-import { FaLocationArrow } from "react-icons/fa";
+import React from 'react';
+import { FaPlus, FaTrashAlt, FaRegEdit, FaShareAlt } from 'react-icons/fa';
 
-interface cardType{
-   name:string;
-   description?:string;
-   img?:string;
-   bg?:string;
-   color?:string;
-}
+const cardData = [
+  {
+    title: "Create",
+    description: "Create new notes easily. Organize your thoughts and tasks efficiently.",
+    icon: <FaPlus className="text-4xl mb-4" />,
+    bgColor: "bg-gray-800",
+    borderColor: "hover:border-rgb(57, 255, 20)"
+  },
+  {
+    title: "Delete",
+    description: "Remove unwanted or outdated notes to keep things clutter-free.",
+    icon: <FaTrashAlt className="text-4xl mb-4" />,
+    bgColor: "bg-gray-800",
+    borderColor: "hover:border-red-400"
+  },
+  {
+    title: "Update",
+    description: "Modify your notes to keep them up-to-date with the latest information.",
+    icon: <FaRegEdit className="text-4xl mb-4" />,
+    bgColor: "bg-gray-800",
+    borderColor: "hover:border-green-400"
+  },
+  {
+    title: "Share",
+    description: "Share your notes with others to collaborate and stay connected.",
+    icon: <FaShareAlt className="text-4xl mb-4" />,
+    bgColor: "bg-gray-800",
+    borderColor: "hover:border-yellow-400"
+  }
+];
 
-export function Cards(){
-    const card:cardType[] = [
-        {name:"Creating Notes",img:"create.png" ,bg:"bg-white",color:"bg-green-300"},
-        {name:"modify Notes",img:"modify.png" ,bg:"bg-green-200",color:"bg-red-500"},
-        {name:"view Notes",img:"view.png" ,bg:"bg-green-200",color:"bg-red-500"},
-        {name:"shareing Notes",img:"share.png" ,bg:"bg-white",color:"bg-green-300"},
-    ]
-    return(
-        <div className=" p-1 grid md:grid-cols-2 items-center gap-4 lg:gap-6 mt-[90px]  md:mt-[200px]">
-            {
-                card.map((cur,index)=>{
-                    return(
-                        <div key={index} className={` w-[100%] sm:w-[80%] md:w-[100%] lg:w-[90%] mx-auto rounded-[28px] p-6 ${cur.bg} shadow-xl`}>
-                            {
-                                
-                                    
-                                    <>
-                                    <div className={` m-2 flex justify-evenly gap-2 p-3 `}>
-                                        <div className={`text-xl sm:text-2xl lg:text-3xl mt-4`}><span className={`${cur.color} rounded-xl p-2 md:p-1 text-center`}>{cur.name}</span></div>
-                                        <div className="max-w-[30%]"><img src={cur.img} alt="" className="object-cover rounded" /></div>
-                                    </div>
-                                    <div className=" flex justify-around items-center shadow-xl rounded-[50px] py-2 lg:pl-[70px] lg:pr-[70px]">
-                                        <Link href={"/manual"}><FaLocationArrow className="bg-black text-5xl rounded-lg p-2 md:p-1 md:text-4xl text-white md:w-[70px] md:h-[40px]"/></Link>
-                                        <Link href={"/manual"}><p className=" text -xl md:text-xl ">Learn more</p></Link>
-                                    </div>
-                                    </>  
-                                    
-                               
-                            }
-                        </div>
-                    )
-                })
-            }
-        </div>
-    )
-}
+ export const Cards = () => {
+  return (
+    <div className="container mx-auto px-4 py-12 md:mt-[179px]">
+              <h1 className='text-4xl ml-[480px] mb-20'>ready for it</h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {cardData.map((card, index) => (
+          <div
+            key={index}
+            className= {`${card.bgColor} text-white p-6 border rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl   ${card.borderColor}`}
+          >
+            <div className="flex justify-center mb-4">
+              {card.icon}
+            </div>
+            <h3 className="text-xl font-semibold mb-4 text-center">{card.title}</h3>
+            <p className="text-center">{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+

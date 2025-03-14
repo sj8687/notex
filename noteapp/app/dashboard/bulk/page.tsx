@@ -89,14 +89,14 @@ export default function Bulk() {
                         )
 
                             :
-
-                            (<div className="borde grid gap-2 grid-cols-1 p-1 md:hidden sm:grid-cols-2 sm:justify-between">
+// mobile note dislapy
+                            (<div className="borde grid gap-2 grid-cols-1  p-1 md:hidden sm:grid-cols-2 sm:justify-between">
                                 {
                                     notes?.map((curnotes) => {
                                         const createdlocalDate = new Date(curnotes.createdAt).toLocaleDateString()
                                         const updatedlocalDate = new Date(curnotes.updatedAt).toLocaleDateString()
                                         return (
-                                            <div key={curnotes.noteNo} className="border w-full sm:w-[100%] mb-4 bg-slate-200 p-2 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                                            <div key={curnotes.noteNo} className="border w-full sm:w-[100%] mb-4 bg-slate-300 p-2 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
 
                                                 <div className="flex justify-between mb-2 ">
                                                     <h2 className="pl-2 mb-2">Title: <span className="text-md text-justify ">{curnotes.title.length > 40 ? curnotes.title.substring(0, 20) + "..."
