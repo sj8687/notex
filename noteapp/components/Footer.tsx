@@ -1,8 +1,35 @@
+"use client"
+
+import { useGSAP } from "@gsap/react";
 import { FaTwitter, FaInstagram } from "react-icons/fa";
+import { gsap } from "gsap";
+const mm = gsap.matchMedia()
+
 
 export default function Footer() {
+
+  useGSAP(()=>{           
+    
+    mm.add("(min-width:767px)",()=>{
+      gsap.to(".text",{
+          scale:1.1,
+          duration:3,
+          color:"white",
+          scrollTrigger:{
+              trigger:".text",
+
+              scroller:"body",
+              start:"top 70%",
+              end:"top -20%",
+              scrub:1
+          },
+          
+     })
+   
+  })
+            })
   return (
-    <footer className="bg-black text-white py-10 px-6 md:ml-[180px] ">
+    <footer className="bg-black text text-white py-10 px-6 md:ml-[180px] ">
       <div className="max-w-6xl mx-auto grid grid-cols-4  md:mt-[80px]   md:grid-cols-4 gap-8 text-[13px]">
         {/* Column 1 - Company */}
         <div>

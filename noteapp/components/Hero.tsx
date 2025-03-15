@@ -7,6 +7,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/app/context/store";
 gsap.registerPlugin(ScrollTrigger)
+
 export function Hero(){
 const router = useRouter()
 const {authorized} = useMyContext()

@@ -8,10 +8,9 @@ import {
    
   export function Faq() {
     return (
-        
-      <Accordion type="single" collapsible className=" shadow-2xl w-[95%] sm:max-w-[85%] md:w-[65%] mx-auto  rounded-[20px] px-4 py-5">
+      <><p className="text-3xl w-[50%] text-center mx-auto my-[20px] sm:my-[70px]">FAQ</p><Accordion type="single" collapsible className=" shadow-2xl w-[95%] sm:max-w-[85%] md:w-[65%] mx-auto  rounded-[20px] px-4 py-5">
         <AccordionItem value="item-1">
-          <AccordionTrigger  className=" text-md pl-4 sm:pl-4 md:text-[19px] hover:no-underline hover:text-green-300 lg:pl-7 hover:scale-x-95 transition-all duration-500">NoteX Is Free Or Not?</AccordionTrigger>
+          <AccordionTrigger className=" text-md pl-4 sm:pl-4 md:text-[19px] hover:no-underline hover:text-green-300 lg:pl-7 hover:scale-x-95 transition-all duration-500">NoteX Is Free Or Not?</AccordionTrigger>
           <AccordionContent className="md:text-lg pl-6 lg:pl-9">
             -Yes. It Is absolutly Free .
           </AccordionContent>
@@ -25,9 +24,9 @@ import {
         <AccordionItem value="item-3">
           <AccordionTrigger className=" text-md pl-4 sm:pl-4 md:text-[19px] hover:no-underline hover:text-green-300 lg:pl-7 hover:scale-x-95 transition-all duration-500">Can i share with friends ?</AccordionTrigger>
           <AccordionContent className="md:text-lg pl-6 lg:pl-9">
-            -Yes u can, share the link.  
+            -Yes u can, share the link.
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
+      </Accordion></>
     )
   }
