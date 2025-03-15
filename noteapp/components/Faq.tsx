@@ -11,7 +11,7 @@ import {
         
       <Accordion type="single" collapsible className=" shadow-2xl w-[95%] sm:max-w-[85%] md:w-[65%] mx-auto  rounded-[20px] px-4 py-5">
         <AccordionItem value="item-1">
-          <AccordionTrigger  className=" text-md pl-4 sm:pl-4 md:text-[19px] hover:no-underline hover:text-green-300 lg:pl-7 hover:scale-x-95 transition-all duration-500">NoteVault Is Free Or Not?</AccordionTrigger>
+          <AccordionTrigger  className=" text-md pl-4 sm:pl-4 md:text-[19px] hover:no-underline hover:text-green-300 lg:pl-7 hover:scale-x-95 transition-all duration-500">NoteX Is Free Or Not?</AccordionTrigger>
           <AccordionContent className="md:text-lg pl-6 lg:pl-9">
             -Yes. It Is absolutly Free .
           </AccordionContent>
@@ -19,7 +19,7 @@ import {
         <AccordionItem value="item-2">
           <AccordionTrigger className=" text-md pl-4 sm:pl-4 md:text-[19px] hover:no-underline hover:text-green-300 lg:pl-7 hover:scale-x-95 transition-all duration-500">Is Is secure?</AccordionTrigger>
           <AccordionContent className="md:text-lg pl-6 lg:pl-9">
-            -Yes. it is secure and your data is protected by NoteVault
+            -Yes. it is secure and your data is protected by NoteX
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">

@@ -35,7 +35,7 @@ const cardData = [
  export const Cards = () => {
   return (
     <div className="container mx-auto px-4 py-12 md:mt-[179px]">
-              <h1 className='text-4xl ml-[480px] mb-20'>ready for it</h1>
+              <h1 className='text-4xl ml-[70px] md:ml-[480px] mb-20'>Features‼️</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {cardData.map((card, index) => (
