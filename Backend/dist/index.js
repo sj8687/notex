@@ -43,12 +43,11 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const dotenv = __importStar(require("dotenv"));
 const notesRoute_1 = require("./routes/notesRoute");
 dotenv.config();
-const frontendUrl = process.env.FRONTEND_URL;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use((0, cors_1.default)({
-    origin: "http://localhost:3000",
+    origin: process.env.FRONTEND_URL,
     credentials: true
 }));
 app.use("/user", loginRoute_1.loginRoute);
