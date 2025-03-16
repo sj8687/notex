@@ -171,7 +171,7 @@ notesRoute.post("/view",tokenMiddleware,async(req,res)=>{
         if(note){
             res.status(200).json(note);
         }else{
-            res.status(404).json("not found")
+            res.status(404).json("not found");
         }
         
         
