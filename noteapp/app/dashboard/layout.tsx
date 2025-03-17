@@ -3,7 +3,6 @@ import "../globals.css";
 import { TopSection } from "./components/TopSection";
 import { NotesContextProvider } from "../context/notesStore";
 import { MainDash } from "./components/MainDash";
-import { MyProvider } from "../context/store";
 import { ToastProvider } from "@/components/ToastContainer";
 
 
@@ -22,12 +21,10 @@ export default function RootLayout({
         <body >
         
           <NotesContextProvider>
-            <MyProvider>
             <TopSection/>
             <MainDash/>
             {children}
             <ToastProvider />
-            </MyProvider>
           </NotesContextProvider>
         
         </body>

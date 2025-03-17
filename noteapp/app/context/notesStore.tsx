@@ -1,11 +1,8 @@
 "use client"
 import axios from "axios";
-import { useRouter } from "next/navigation";
-import { createContext, Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
 
 interface NotesContextType {
-    authorized: boolean;
-    setAuthorized: Dispatch<SetStateAction<boolean>>
     toggle: boolean;
     setToggle: Dispatch<SetStateAction<boolean>>;
     user: string;
@@ -16,22 +13,10 @@ const NotesContext = createContext<NotesContextType | undefined>(undefined);
 
 
 export const NotesContextProvider = ({ children }: { children: ReactNode }) => {
-    const router = useRouter();
-   const [authorized, setAuthorized] = useState<boolean>(false);
     const [toggle, setToggle] = useState(false);
     const [user, setUser] = useState("user")
 
-    const validateUser = async () => {
-        try {
-            const res = await axios.get(`${process.env.NEXT_PUBLIC_Backend_URL}/user/authorized`, {
-                withCredentials: true,
-            });
-            setAuthorized(res.data as boolean);
-        } catch (error) {
-            console.log(error);
-            setAuthorized(false);
-        }
-    };
+    
       
     const getUser = async () => {
         try {
@@ -45,22 +30,12 @@ export const NotesContextProvider = ({ children }: { children: ReactNode }) => {
     };
 
     useEffect(() => {
-        validateUser()
         getUser()
     }, [])
-    useEffect(()=>{
-        
-        if (authorized) {
-            router.push("/dashboard")
-        } else {
-            router.push("/login/signup")
-        }
-    },[authorized])
-  
+    
 
-    const memoizeValue = useMemo(()=> ({ authorized, setAuthorized, toggle, setToggle, user }),[authorized,toggle,user])
 
-    return <NotesContext.Provider value={memoizeValue}>
+    return <NotesContext.Provider value={{ toggle, setToggle, user }}>
         {children}
     </NotesContext.Provider>
 }

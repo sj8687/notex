@@ -1,5 +1,4 @@
 "use client"
-import { useMyContext } from "@/app/context/store";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -7,21 +6,18 @@ import { useEffect } from "react";
 
 export default function Logout() {
     const router = useRouter();
-    const { setAuthorized } = useMyContext()
     useEffect(() => {
         const out = async () => {
             try {
                 await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/user/logout`, {}, { withCredentials: true });
-                setAuthorized(false);
-                router.push("/login/signup");
+                router.push("/");
             } catch (error) {
                 console.error("Logout failed", error);
             }
         };
 
         out();
-    }, [router, setAuthorized]);
-
+    }, []);
     return (
         <>
             <div className="text-white md:w-[500px] mt-[120px] sm:w-[60%] mx-auto p-2">
