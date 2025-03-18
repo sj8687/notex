@@ -13,7 +13,7 @@ export function TopSection() {
     // mobile nav bar only
     return (
         <div className="">
-            <div className=" w-[85%] mt-3 mx-auto text-gray-200 md:hidden p-2 z-50 bg-transparent rounded-lg backdrop-blur-[10px] fixed top-0 left-0 right-0 shadow-[0_0_10px_rgba(0,255,205,4)]">
+            <div className=" w-[85%] mt-3 mx-auto  text-gray-200 md:hidden p-2 z-50 bg-transparent rounded-lg backdrop-blur-[10px] fixed top-0 left-0 right-0 shadow-[0_0_10px_rgba(0,255,205,4)]">
                 <div className="flex justify-between px-2">
                     <div onClick={handelToggle} className="text-lg relative cursor-pointer"><FaBars /></div>
                     <Link href={"/"}><button>Home</button></Link>
@@ -23,7 +23,7 @@ export function TopSection() {
 
                 <div>
                     {toggle ?
-                        <div className="w-[200px] absolute bg-white text-black -left-[5%] top-[120%] p-2 transition-shadow duration-300 cursor-pointer hover:shadow-black-400 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                        <div className="w-[200px] absolute bg-gray-700 text-white -left-[5%] top-[120%] p-2 transition-shadow duration-300 cursor-pointer hover:shadow-black-400 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
                             <div onClick={handelToggle} className="text-2xl cursor-pointer ml-4 mt-2">
                                 <p className="bg-black w-[20%] rounded-full flex justify-center text-white">X</p>
                             </div>

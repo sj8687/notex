@@ -118,12 +118,12 @@ export function Hero() {
     return (
         <div className="w-full h-full md:mt-[100px] md:ml-9">
             <div className="grid md:grid-cols-2 grid-cols-1  md:mt-20">
-                <div  id="hero-heading" className="text-st md:mt-[50px] mt-[30px] md:ml-[40px] h-[250px] ml-9 order-2 md:order-1">
+                <div  id="hero-heading" className="text-st md:mt-[50px] mt-[30px] md:ml-[40px] h-[250px] ml-7 order-2 md:order-1">
                     <h1 className=" text-wrap md:text-[50px] leading-[45px] sm:leading-[65px] text-4xl 
 ">
-                        Create. Organize. Share. with Note<span className="text-green-400">X.</span> 
+                        Create Organize your notes with Note<span className="text-green-400">X.</span> 
                     </h1>
-                    <p className="mt-4  text-wrap text-[16px] md:text-[18px] ">
+                    <p className="mt-4  text-wrap text-[16px] md:text-[18px]  ">
                         A digital workspace that helps you to visulally Organize ideas to map any content to share insperation, to brainstorm, to research....
                     </p>
 
@@ -139,7 +139,7 @@ export function Hero() {
                         </Link>
                     </div>
 
-                    <p className="mt-3 text-gray-400 ">
+                    <p className="mt-3 text-gray-400 hidden lg:block  ">
                         Notex is free trial-no credit card required-cancel anytime
                     </p>
                 </div>

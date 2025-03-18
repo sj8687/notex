@@ -38,9 +38,9 @@ export function Structure() {
                 !authorized ? (<div className=""><MainSkeleton/></div>)
                     : (<div className="">
                         
-                        <div className="md:hidden  w-[100%] mt-[80px] ">
+                        <div className="md:hidden   w-[100%] h-auto mt-[80px] ">
                             <h1 className="shadow-xl text-[50px] sm:text-[70px] text-center text-red-100">Welcome <span className="text-green-400">{user}</span> your creation start here..</h1>
-                            <div className="w-full  mt-[0px] px-2 py-7 rounded-t-2xl shadow-xl">
+                            <div className="w-full h-auto  mt-[0px] px-2 py-7 rounded-t-2xl shadow-xl">
                                 <div className="text-white mt-[60px]">
                                     <h2 className="text-3xl pl-4 ml-[94px] ">Create itt✨ </h2>
                                     <div className=" p-2 rounded-sm drop-shadow-md">

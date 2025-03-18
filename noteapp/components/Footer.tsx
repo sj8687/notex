@@ -55,7 +55,7 @@ export default function Footer() {
 
         {/* Column 3 - Resources */}
         <div>
-          <h2 className="text-xl md:text-xl text-[16px] font-bold mb-4">Resources</h2>
+          <h2 className=" md:text-xl text-[16px] font-bold mb-4">Resources</h2>
           <ul className="space-y-2 text-gray-400">
             <li><a href="#" className="hover:text-white transition">Blog</a></li>
             <li><a href="#" className="hover:text-white transition">Case Studies</a></li>

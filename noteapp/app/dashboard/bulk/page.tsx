@@ -90,13 +90,13 @@ export default function Bulk() {
 
                             :
 // mobile note dislapy
-                            (<div className="borde grid gap-2 grid-cols-1  p-1 md:hidden sm:grid-cols-2 sm:justify-between">
+                            (<div className="borde grid gap-2 grid-cols-1  p-1 md:hidden sm:grid-cols-2 sm:justify-between text-white">
                                 {
                                     notes?.map((curnotes) => {
                                         const createdlocalDate = new Date(curnotes.createdAt).toLocaleDateString()
                                         const updatedlocalDate = new Date(curnotes.updatedAt).toLocaleDateString()
                                         return (
-                                            <div key={curnotes.noteNo} className="border w-full sm:w-[100%] mb-4 bg-slate-300 p-2 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                                            <div key={curnotes.noteNo} className="border w-full sm:w-[100%] mb-4 bg-slate-1000 p-2 rounded-lg shadow-[0_0_10px_rgba(300,0,0,4)]">
 
                                                 <div className="flex justify-between mb-2 ">
                                                     <h2 className="pl-2 mb-2">Title: <span className="text-md text-justify ">{curnotes.title.length > 40 ? curnotes.title.substring(0, 20) + "..."
@@ -110,7 +110,7 @@ export default function Bulk() {
                                                         <hr />
                                                     </div>
                                                 </div>
-                                                <div className="w-full borde">
+                                                <div className="w-full ">
                                                     <div className="flex justify-end gap-5 pr-2 mb-1">
                                                         <Link className="bg-black px-2 py-1 rounded-lg text-green-400" href={`/dashboard/view?noteNo=${curnotes.noteNo}`}><FaEye /></Link>
                                                         <Link className="bg-black px-2 py-1 rounded-lg text-white" href={`/dashboard/update/${curnotes.noteNo}`}><RxUpdate /></Link>
@@ -119,8 +119,8 @@ export default function Bulk() {
                                                     <hr />
                                                 </div>
                                                 <p className="mb-2">Description:</p>
-                                                <div className="w-[80%] mx-auto min-h-[80px] p-1 outline">
-                                                    <p className="line-clamp-4 w-[90%] h-[100px] text-justif border p-1">{curnotes.description}</p>
+                                                <div className="w-[110%] mx-auto h-[150px] p-1 ">
+                                                    <p className="line-clamp-4 w-[90%] h-[150px] text-wrap text-justify  overflow-y-scroll   p-4">{curnotes.description}</p>
                                                 </div>
 
                                             </div>
