@@ -8,9 +8,6 @@ const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
 contactRoutes.post("/contact", async (req: Request, res: Response) => {
     const { name, email, message } = req.body;
 
-   
- 
-      
     try {
         await axios.post(DISCORD_WEBHOOK_URL, {
           content: `📩 **New Contact Message**\n\n👤 **Name:** ${name}\n📧 **Email:** ${email}\n💬 **Message:** ${message}`,
