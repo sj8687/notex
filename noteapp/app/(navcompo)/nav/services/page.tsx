@@ -35,7 +35,7 @@ const cardData = [
   const Services = () => {
   return (
     <div className="container mx-auto px-4 py-12 md:mt-[100px] mt-[50px]">
-              <h1 className='text-4xl ml-[85px] md:ml-[540px] text-white mb-20'>Features‼️</h1>
+              <h1 className='text-4xl ml-[85px] md:ml-[540px] text-white mb-20'>Services‼️</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {cardData.map((card, index) => (

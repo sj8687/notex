@@ -27,7 +27,7 @@ export function Navbar(){
                         setIsAuthorized(true);
                     } else {
                         setIsAuthorized(false);
-                        router.push("/")
+                        // router.push("/")
                     }
                 } catch (error) {
                     console.error("Auth check failed:", error);

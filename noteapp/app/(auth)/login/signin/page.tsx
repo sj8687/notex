@@ -95,9 +95,9 @@ export default function SignIn() {
                 <div className=" mt-2 p-4 flex justify-center flex-col">
 
                     <label className="block font-semibold">Email :</label>
-                    <input id="email" ref={emailRef} autoComplete="off" className="p-1 text-black rounded mb-2 pl-2" type="text" />
+                    <input id="email" ref={emailRef} autoComplete="off" className="p-1 text-black rounded mb-2 pl-2" type="email" />
                     <label className="block font-semibold" >Password :</label>
-                    <input id="password" ref={passwordRef} autoComplete="off" className="p-1 rounded pl-2 text-black" type="text" />
+                    <input id="password"  ref={passwordRef} autoComplete="off" className="p-1 rounded pl-2 text-black" type="password" />
 
 
                     <div className={`text-center mt-4`}>

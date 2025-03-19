@@ -2,7 +2,7 @@
 const About = () => {
   return (
       <section className="p-8 max-w-5xl mx-auto text-center mt-20">
-        <h1 className="text-5xl font-extrabold text-white mb-6">About Notex</h1>
+        <h1 className="text-5xl font-bold text-white mb-6">About Note<span className="text-[60px] text-green-400">X</span></h1>
         <p className="text-lg text-gray-400 mb-8">
           Welcome to <span className="text-blue-400 font-semibold">Notex</span>, your ultimate note-taking companion. 
           Designed for professionals, students, and creatives, Notex helps you capture and organize ideas effortlessly.

@@ -91,9 +91,9 @@ export default function Signup() {
                     </div> 
                     
                     <label className="block font-semibold" >Email :</label>
-                    <input ref={emailRef} id="email" autoComplete="off"  className="p-1 rounded mb-2 pl-2 text-black" type="text" />
+                    <input ref={emailRef} id="email" autoComplete="off"  className="p-1 rounded mb-2 pl-2 text-black" type="email" />
                     <label className="block font-semibold">Password :</label>
-                    <input ref={passwordRef} id="password" autoComplete="off"  className="p-1 rounded pl-2 text-black" type="text" />
+                    <input ref={passwordRef} id="password" autoComplete="off"  className="p-1 rounded pl-2 text-black" type="password" />
 
                     <p className="mt-4 text-center">{"already have account"} <Link className="ml-[2px] text-blue-600 underline" href={"/login/signin"}>{"Sign In"}</Link></p>
                                                                                                                     
