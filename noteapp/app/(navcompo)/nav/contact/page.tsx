@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,14 +36,26 @@ const Contact = () => {
 
     )
 
-      if (res.data) {
-        setSuccess(true);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setError("Failed to send message. Try again later.");
+     if(res.status == 200){
+                    setSuccess(true);
+                    setFormData({ name: "", email: "", message: "" });
+                    toast.success('SignIn success.......', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                   });
+                  }   
+
+       else {
+        toast.error("Failed to send message. Try again later.");
       }
     } catch (error) {
-      setError("Network error. Please try again.");
+      toast.error("Network error. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -56,8 +69,8 @@ const Contact = () => {
           Have questions or need support? Reach out to us!
         </p>
 
-        {success && <p className="text-green-500 mb-4">Message sent successfully!</p>}
-        {error && <p className="text-red-500 mb-4">{error}</p>}
+        {/* {success && <p className="text-green-500 mb-4">Message sent successfully!</p>}
+        {error && <p className="text-red-500 mb-4">{error}</p>} */}
 
         <form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-lg  shadow-[0_0_10px_rgba(200,700,550,30)]">
           <input
@@ -84,7 +97,7 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             className="w-full p-2 bg-gray-800 text-white rounded mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
-            rows={14}
+            rows={11}
             required
           ></textarea>
           <button
