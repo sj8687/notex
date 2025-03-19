@@ -92,10 +92,10 @@ export function Navbar(){
                     <h1 className="text-xl  text-white">Note<span className="text-green-400 font-bold text-[24px]">X</span></h1>
                 </div>
                 <div className="text-start  px-2 hidden sm:flex sm:gap-12 text-gray-100 text-[18px]">
-                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/"}>Home</Link>
-                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/services"}>Services</Link>
-                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"manual"}>Manual</Link>
-                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/about"}>About</Link>
+                    <Link className="hover:shadow-lg hover:rounded-lg hover: menus" href={"/"}>Home</Link>
+                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/nav/services"}>Services</Link>
+                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/nav/contact"}>Contact</Link>
+                    <Link className="hover:shadow-lg hover:rounded-lg menus" href={"/nav/aboutt"}>About</Link>
                     
                 </div>
                 
@@ -112,12 +112,12 @@ export function Navbar(){
                     </div>
                 </div>
 
-                         <div id="mobile-menu" className=" absolute top-12 right-[-90%] bg-black text-white flex flex-col p-3 w-[220px] justify-center items-center gap-4 rounded-lg ">
+                         <div id="mobile-menu" className=" absolute top-12 border right-[-90%] bg-black text-white flex flex-col p-3 w-[220px] justify-center items-center gap-4 rounded-lg ">
                                 <p onClick={()=>hidediv()} className="absolute top-0 right-0 px-2 rounded mr-5 mt-2 font-medium text-black bg-green-300 cursor-pointer">X</p>
                                 <Link id="mobile-menu-text" className="mt-3 rounded-lg outline-none tracking-widest transition-shadow duration-100 hover:shadow-white px-10 " href={"/"}>Home</Link>
-                                <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/services"}>Services</Link>
-                                <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/manuals"}>Manual</Link>
-                                <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/about"}>About</Link>
+                                <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/nav/services"}>Services</Link>
+                                <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/nav/contact"}>Contact</Link>
+                                <Link id="mobile-menu-text" className="tracking-widest rounded-lg transition-shadow duration-100 hover:shadow-white px-10 barsmenus" href={"/nav/aboutt"}>About</Link>
                             </div>
 
                     
