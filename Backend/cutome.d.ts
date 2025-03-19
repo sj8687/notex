@@ -9,3 +9,4 @@ declare global {
     }
   }
 }
+declare module "cookie-parser";
