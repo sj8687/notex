@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import { useState } from "react";
 
 const Contact = () => {
@@ -21,10 +22,18 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/user/signin`, {
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/contact/contact`,
+        {
+          body: JSON.stringify(formData),
+      },
+      {
+          headers: {
+              "Content-Type": "application/json"
+          },
+          withCredentials:true,
+      }
+
+    )
 
       if (res.data) {
         setSuccess(true);
