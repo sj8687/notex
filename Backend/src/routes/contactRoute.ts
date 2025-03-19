@@ -19,6 +19,6 @@ contactRoutes.post("/contact", async (req: Request, res: Response) => {
 
     } catch (error) {
         console.error("Error sending message:", error);
-        res.status(500).json({ error: "Something went wrong." });
+        res.status(500).json({ error: "Something went wrong in backend." });
       }
 });
