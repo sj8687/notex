@@ -4,6 +4,8 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import * as dotenv from 'dotenv';
 import { notesRoute } from "./routes/notesRoute";
+import { contactRoutes } from "./routes/contactRoute";
+
 dotenv.config();
 
 
@@ -17,6 +19,8 @@ app.use(cors({
 
 app.use("/user",loginRoute)
 app.use("/notes",notesRoute)
+app.use("/contact",contactRoutes);
+
 
 const port =8080;
 app.listen(port, () => {

@@ -91,8 +91,8 @@ exports.loginRoute.post("/signin", (req, res) => __awaiter(void 0, void 0, void 
                     }, jwtSecret);
                     res.cookie("token", token, {
                         httpOnly: true,
-                        secure: true,
-                        sameSite: "none",
+                        secure: process.env.NODE_ENV == "production" ? true : false,
+                        sameSite: process.env.NODE_ENV == "production" ? "none" : "lax",
                         path: "/",
                         maxAge: 30 * 24 * 60 * 60 * 1000,
                     }).json({
