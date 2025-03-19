@@ -10,7 +10,7 @@ contactRoutes.post("/contact", async (req: Request, res: Response) => {
 
     try {
         await axios.post(DISCORD_WEBHOOK_URL, {
-          content: `📩 **New Contact Message**\n\n👤 **Name:** ${name}\n📧 **Email:** ${email}\n💬 **Message:** ${message}`,
+          content: `📩 **New Contact Message arrived**\n\n👤 **Name:** ${name}\n📧 **Email:** ${email}\n💬 **Message:** ${message}`,
         });
 
         res.status(200).json({ success: "Message sent to Discord!" });
