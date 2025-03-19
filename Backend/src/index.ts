@@ -1,7 +1,7 @@
 import express from "express"
 import { loginRoute } from "./routes/loginRoute";
 import cors from "cors"
-import cookieParser from "cookie-parser"
+import cookieParser from "cookie-parser";
 import * as dotenv from 'dotenv';
 import { notesRoute } from "./routes/notesRoute";
 import { contactRoutes } from "./routes/contactRoute";
@@ -22,7 +22,7 @@ app.use("/notes",notesRoute)
 app.use("/contact",contactRoutes);
 
 
-const port =8080;
+const port = process.env.PORT || 8080;  
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
