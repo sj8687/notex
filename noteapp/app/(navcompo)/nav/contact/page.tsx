@@ -23,9 +23,9 @@ const Contact = () => {
 
     try {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/contact/contact`,
-        {
-          body: JSON.stringify(formData),
-      },
+        
+          formData
+      ,
       {
           headers: {
               "Content-Type": "application/json"
