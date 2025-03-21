@@ -69,9 +69,6 @@ const Contact = () => {
           Have questions or need support? Reach out to us!
         </p>
 
-        {/* {success && <p className="text-green-500 mb-4">Message sent successfully!</p>}
-        {error && <p className="text-red-500 mb-4">{error}</p>} */}
-
         <form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-lg  shadow-[0_0_10px_rgba(200,700,550,30)]">
           <input
             type="text"

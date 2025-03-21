@@ -98,7 +98,7 @@ export default function Signup() {
                     <p className="mt-4 text-center">{"already have account"} <Link className="ml-[2px] text-blue-600 underline" href={"/login/signin"}>{"Sign In"}</Link></p>
                                                                                                                     
                     <div className={`text-center mt-4`}>
-                        <CustomeButton text={`${signup ? "signup...":"Sign In"}`} textColor="text-black hover:shadow-none"
+                        <CustomeButton text={`${signup ? "Wait...":"Sign Up"}`} textColor="text-black hover:shadow-none"
                             textSize="text-[17px]"
                             width="w-[120px]"
                             height="h-[45px]"

@@ -59,7 +59,7 @@ export function Navbar(){
                     x: "10px",
                     duration: 0.1,
                     opacity: 0,
-                    stagger: 0.5,
+                    stagger: 0.1,
                 });
             }
         }, []);

@@ -101,7 +101,7 @@ export default function SignIn() {
 
 
                     <div className={`text-center mt-4`}>
-                        <CustomeButton text={`${signin ? "signin..." :"signin "}`} textColor="text-black hover:shadow-none"
+                        <CustomeButton text={`${signin ? "Wait..." :"signin "}`} textColor="text-black hover:shadow-none"
                             textSize="text-[17px]"
                             width="w-[120px]"
                             height="h-[45px]"
