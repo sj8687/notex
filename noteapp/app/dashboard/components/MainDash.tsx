@@ -13,6 +13,7 @@ import { NoteContainer } from "./NoteContainer";
 import { MainDashSkeleton } from "./MainDashSkeleton";
 import { MainSkeleton } from "./MainSkeleton";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 
 interface notesType {
@@ -55,6 +56,7 @@ export function MainDash() {
     const [debouncedSearch, setDebouncedSearch] = useState<string>("");
     const [authorized, setIsAuthorized] = useState(false); // State for authentication status
 
+    const router = useRouter()
     useEffect(() => {
         async function checkAuth() {
             try {
@@ -66,8 +68,14 @@ export function MainDash() {
                     console.log("User is authorized:", res.data);
                     setIsAuthorized(true);
                 } 
+                else{
+                    setIsAuthorized(false)
+                    router.push("/login/signup")
+                }
             } catch (error) {
-                console.error("Auth check failed:", error);
+                router.push("/login/signup")
+                toast("Auth check failed:");
+
             }
         }
 
@@ -244,12 +252,11 @@ export function MainDash() {
             {
                 !authorized ? (<MainSkeleton/>)
                 :
-            <div className=" w-full p-2 h-screen text-whit hidden md:block text-white ">
-                <div className=" w-full mb-2 shadow-md ml-4">
-                    <h1 className="text-[20px]">Note<span className="text-green-500 text-2xl">X</span></h1>
-                    <p className="pl-3 bg-"><span className=""></span></p>
+            <div className=" w-full p-2 h-screen  hidden md:block text-white ">
+                <div className=" w-full mb-2 shadow-md pl-3 flex justify-between">
+                   <Link href={"/"}> <h1 className="text-[22px] cursor-pointer mt-3 ml-2">Note<span className="text-green-500 font-bold text-3xl">X</span></h1></Link>
+                   <Link href={"/chat"} > <p className="p-2 font-medium cursor-pointer shadow-[0_0_10px_rgba(100,25,255,4)] border mr-6 mt-3 rounded-sm text-white">Chat With Friends</p></Link>
                 </div>
-
                 <div className=" mb-3 relative shadow-m">
                     <div className="w-[500px]  mx-auto flex justify-around py-3 items-center shadow-[0_0_10px_rgba(0,255,255,4)] rounded-2xl">
                         <input className="w-[250px] rounded-sm p-[4px] bg-green-100  text-black" type="text" placeholder="Search Note......" value={search}

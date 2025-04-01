@@ -19,16 +19,14 @@ exports.contactRoutes = (0, express_1.Router)();
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
 exports.contactRoutes.post("/contact", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, email, message } = req.body;
-    if (!name || !email || !message)
-        res.status(400).json({ error: "All fields are required." });
     try {
         yield axios_1.default.post(DISCORD_WEBHOOK_URL, {
-            content: `📩 **New Contact Message**\n\n👤 **Name:** ${name}\n📧 **Email:** ${email}\n💬 **Message:** ${message}`,
+            content: `📩 **New Contact Message arrived**\n\n👤 **Name:** ${name}\n📧 **Email:** ${email}\n💬 **Message:** ${message}`,
         });
         res.status(200).json({ success: "Message sent to Discord!" });
     }
     catch (error) {
         console.error("Error sending message:", error);
-        res.status(500).json({ error: "Something went wrong." });
+        res.status(500).json({ error: "Something went wrong in backend.." });
     }
 }));

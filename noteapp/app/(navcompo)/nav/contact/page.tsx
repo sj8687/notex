@@ -12,7 +12,6 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,7 +38,7 @@ const Contact = () => {
      if(res.status == 200){
                     setSuccess(true);
                     setFormData({ name: "", email: "", message: "" });
-                    toast.success('SignIn success.......', {
+                    toast.success('message sent successfully.......', {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,

@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 import * as dotenv from 'dotenv';
 import { notesRoute } from "./routes/notesRoute";
 import { contactRoutes } from "./routes/contactRoute";
+import { chatRoute } from "./routes/chatRoute";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(cors({
 app.use("/user",loginRoute)
 app.use("/notes",notesRoute)
 app.use("/contact",contactRoutes);
+app.use("/chat",chatRoute)
 
 
 const port = process.env.PORT || 8080;  

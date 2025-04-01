@@ -11,3 +11,11 @@ export const notesType = z.object({
     title:z.string().min(2),
     description:z.string().min(2)
 }); 
+
+export const RoomSchema = z.object({
+    roomname: z.string().min(1, "Room name is required"),
+});
+
+export const ChatSchema = z.object({
+    message: z.string().min(1, "Message cannot be empty"),
+  });

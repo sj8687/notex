@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -144,9 +145,14 @@ export function Hero() {
                     </p>
                 </div>
 
-                <div className="text-center md:ml-[100px] mt-0 img order-1">
-                    <img src="imgg.jpg" width="400px" alt="Hero Image" />
-                </div>
+                <div className="text-center md:ml-[100px] mt-4 md:mt-2 img order-1">
+                <Image 
+  src="/imgg.jpg" 
+  alt="Hero Image" 
+  width={400} 
+  height={600} 
+  priority 
+/>                </div>
             </div>
         </div>
     );

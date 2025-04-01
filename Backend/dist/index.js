@@ -39,14 +39,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const loginRoute_1 = require("./routes/loginRoute");
 const cors_1 = __importDefault(require("cors"));
-const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const cookieParser = require("cookie-parser");
 const dotenv = __importStar(require("dotenv"));
 const notesRoute_1 = require("./routes/notesRoute");
 const contactRoute_1 = require("./routes/contactRoute");
+const chatRoute_1 = require("./routes/chatRoute");
 dotenv.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cookie_parser_1.default)());
+app.use(cookieParser());
 app.use((0, cors_1.default)({
     origin: process.env.FRONTEND_URL,
     credentials: true
@@ -54,7 +55,8 @@ app.use((0, cors_1.default)({
 app.use("/user", loginRoute_1.loginRoute);
 app.use("/notes", notesRoute_1.notesRoute);
 app.use("/contact", contactRoute_1.contactRoutes);
-const port = 8080;
+app.use("/chat", chatRoute_1.chatRoute);
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { MainSkeleton } from "./MainSkeleton"
 import axios from "axios"
+import { toast } from "react-toastify"
 
 export function Structure() {
     const {  user } = useNotesContext();
@@ -24,8 +25,15 @@ export function Structure() {
                     console.log("User is authorized:", res.data);
                     setIsAuthorized(true);
                 } 
+                else{
+                    setIsAuthorized(false)
+                    router.push("/login/signup")
+                }
             } catch (error) {
-                console.error("Auth check failed:", error);
+                setIsAuthorized(false)
+                router.push("/login/signup")
+                toast("Auth check failed:");
+
             }
         }
 
