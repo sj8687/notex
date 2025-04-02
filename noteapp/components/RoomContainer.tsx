@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { IoSend } from "react-icons/io5";
+import { IoCopy, IoSend } from "react-icons/io5";
 
 import axios from "axios";
 import Spinner from "./Spinner"
+import { toast } from "react-toastify";
 interface Message {
  message: string;
  userId: number;
@@ -132,6 +133,10 @@ const ChatAppContainer = () => {
    mesref.current?.scrollIntoView({ behavior: "smooth" });
  }, [messages]);
 
+ 
+
+
+
  // Function to connect to a room (join or create)
  const connectToRoom = useCallback(
    (roomname: string, isJoining: boolean = false) => {
@@ -210,6 +215,16 @@ const ChatAppContainer = () => {
     }
   };
 }, []);
+
+
+// copy text from board
+const copyToClipboard = (text: string) => {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      toast("Message copied!"); // Show feedback
+    })
+    .catch((err) => console.error("Failed to copy text:", err));
+};
 
 
  return (
@@ -297,6 +312,12 @@ const ChatAppContainer = () => {
                  >
                    {msg.message}
                  </p>
+                 <button
+                     onClick={() => copyToClipboard(msg.message)}
+                     className="ml-2 mt-5 text-gray-500 hover:text-gray-700 transition-all"
+                     >
+                      <IoCopy size={15} />
+                     </button>
                </div>
              ))
            ) : (
@@ -319,6 +340,12 @@ const ChatAppContainer = () => {
              type="text"
              className="flex-1 p-2 rounded-md bg-gray-900 text-white outline-none"
              placeholder="Type a message..."
+             onKeyDown={(event) => {
+              if (event.key === "Enter" ) {
+                sendMessage();
+               
+              }
+            }}
            />
            <button
              onClick={sendMessage}

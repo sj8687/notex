@@ -254,7 +254,7 @@ export function MainDash() {
                 :
             <div className=" w-full p-2 h-screen  hidden md:block text-white ">
                 <div className=" w-full mb-2 shadow-md pl-3 flex justify-between">
-                   <Link href={"/"}> <h1 className="text-[22px] cursor-pointer mt-3 ml-2">Note<span className="text-green-500 font-bold text-3xl">X</span></h1></Link>
+                   <Link href={"/"}> <h1 className="text-[22px] cursor-pointer mt-2 ml-2">Note<span className="text-green-500 font-bold text-3xl">X</span></h1></Link>
                    <Link href={"/chat"} > <p className="p-2 font-medium cursor-pointer shadow-[0_0_10px_rgba(100,25,255,4)] border mr-6 mt-3 rounded-sm text-white">Chat With Friends</p></Link>
                 </div>
                 <div className=" mb-3 relative shadow-m">
